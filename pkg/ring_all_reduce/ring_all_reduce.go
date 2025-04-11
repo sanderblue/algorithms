@@ -1,3 +1,7 @@
+// References:
+//
+// https://www.cs.fsu.edu/~xyuan/paper/09jpdc.pdf
+
 package ringallreduce
 
 import (
