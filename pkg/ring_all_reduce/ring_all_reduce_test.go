@@ -8,7 +8,9 @@ func TestRingAllReduce(t *testing.T) {
 	procs := 4
 	chunkSize := 1
 
-	result := Execute(procs, chunkSize)
+	r := New()
+
+	result := r.Execute(procs, chunkSize)
 
 	expected := float64((procs * (procs + 1)) / 2)
 	for procIdx, proc := range result {
