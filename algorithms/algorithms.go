@@ -1,7 +1,7 @@
 package algorithms
 
 import (
-	"github.com/sanderblue/ai-algorithms/pkg/ringallreduce"
+	"github.com/sanderblue/algorithms/pkg/ringallreduce"
 )
 
 type Algorithms struct {
