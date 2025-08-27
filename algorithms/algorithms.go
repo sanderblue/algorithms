@@ -10,6 +10,6 @@ type Algorithms struct {
 
 func New() *Algorithms {
 	return &Algorithms{
-		RingAllReduce: "work in progress",
+		RingAllReduce: ringallreduce.New(),
 	}
 }

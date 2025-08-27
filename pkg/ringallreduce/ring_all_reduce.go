@@ -11,8 +11,8 @@ import (
 
 type RingAllReduce struct{}
 
-func New() *RingAllReduce {
-	return &RingAllReduce{}
+func New() RingAllReduce {
+	return RingAllReduce{}
 }
 
 // Msg models a message sent between processes.
@@ -80,8 +80,8 @@ func (proc *Node) Run(wg *sync.WaitGroup) {
 	// This way, the designated reduced segment is first sent to the right and all segments are filled in.
 	// -------------------------------------------------
 	for s := 0; s < proc.P-1; s++ {
-		sendIdx := (proc.Rank + 1 + s) % proc.P
-		recvIdx := (proc.Rank + 2 + s) % proc.P
+		sendIdx := (proc.Rank + 1 - s + proc.P) % proc.P
+		recvIdx := (proc.Rank - s + proc.P) % proc.P
 
 		// Copy chunk to send.
 		startSend := sendIdx * proc.ChunkSize

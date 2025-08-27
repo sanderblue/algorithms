@@ -1,2 +1,2 @@
 # algorithms
-AI, deep learning, and computational algorithms written in Go. 
+Computational algorithms written in Go.
